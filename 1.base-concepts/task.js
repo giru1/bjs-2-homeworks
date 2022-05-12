@@ -4,9 +4,7 @@ function solveEquation(a, b, c) {
 	let arr = [];
 	let d = b ** 2 - 4 * a * c;
 	
-	if (d < 0) {
-		return arr;
-	} else if (d === 0) {
+	if (d === 0) {
 	 	arr.push(-b/(2*a))
 	} else if (d > 0) {
 		arr.push((-b + Math.sqrt(d) )/(2*a));
@@ -17,11 +15,11 @@ function solveEquation(a, b, c) {
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
 	
-	if(Number.isNaN(+percent) === true || typeof +percent === 'string') {
+	if(Number.isNaN(+percent) || typeof percent === 'string') {
 		return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`
-	}else if(Number.isNaN(+contribution) === true || typeof +contribution === 'string'){
+	}else if(Number.isNaN(+contribution) || typeof contribution === 'string'){
 		return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`
-	}else if (Number.isNaN(+amount) === true || typeof +amount === 'string'){
+	}else if (Number.isNaN(+amount) || typeof amount === 'string'){
 		return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`
 	}
 	
