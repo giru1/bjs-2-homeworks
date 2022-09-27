@@ -1,36 +1,38 @@
 // Задание 1
 function getArrayParams(arr) {
 	let min, max, sum, avg;
-	
-	min = Math.min.apply(null, arr)
-	max = Math.max.apply(null, arr)
-	sum = arr.map(i => x += i, x = 0).reverse()[0]
-	
-	avg = +(sum / arr.length).toFixed(2)
+
+	min = Math.min(...arr);
+	max = Math.max.apply(null, arr);
+	sum = arr.reduce((arr, element) => arr + element, 0);
+
+	avg = +(sum / arr.length).toFixed(2);
 	return {min: min, max: max, avg: avg};
 }
 
-console.log(getArrayParams([1, 2, 3, -100, 10]))
 
 // Задание 2
 function worker(arr) {
 	let sum;
-
-	// Ваш код
-
+	
+	sum = arr.reduce((res, item) => res + item);
+	
 	return sum;
 }
 
 function makeWork(arrOfArr, func) {
 	let max;
-
-	// Ваш кода
-	// for ...
-
+	
+	let res = arrOfArr.map(item => func(item))
+	max = Math.max.apply(null,res);
+	
 	return max;
 }
 
 // // Задание 3
-// function worker2(arr) {
-// 	// Ваш код
-// }
+function worker2(arr) {
+	let result
+	result =  Math.abs(Math.max.apply(null, arr) - Math.min.apply(null, arr))
+	return result
+}
+
