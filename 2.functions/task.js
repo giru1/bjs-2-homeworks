@@ -32,7 +32,7 @@ function makeWork(arrOfArr, func) {
 // // Задание 3
 function worker2(arr) {
 	let result
-	result =  Math.abs(Math.max.apply(null, arr) - Math.min.apply(null, arr))
+	result =  Math.abs(Math.max.apply(null, arr) - Math.min(...arr))
 	return result
 }
 
