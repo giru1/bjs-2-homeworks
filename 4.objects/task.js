@@ -20,8 +20,8 @@ Student.prototype.addMarks = function (...mark) {
   if(this.marks === undefined){ 
     this.marks = mark
     } else {
-		this.marks = [].concat(this.marks, ...mark);
-		// this.marks.push(...mark)
+		// this.marks = [].concat(this.marks, ...mark);
+		this.marks.push(...mark)
     }
 }
 
