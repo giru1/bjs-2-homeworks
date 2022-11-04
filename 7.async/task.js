@@ -32,8 +32,8 @@ class AlarmClock {
 		function checkClock(alarm) {
 			if(alarm.time === this.getCurrentFormattedTime()) alarm.callback();
 		}
-		
-		if(!this.timerId) this.timerId = setInterval(()=>this.alarmCollection.some(item => item.checkClock()), 1000)
+		let checkAlarm = checkClock.bind(this);
+		if(!this.timerId) this.timerId = setInterval(()=>this.alarmCollection.some(item => checkAlarm(item)), 1000)
 	}
 	
 	stop() {
