@@ -28,12 +28,12 @@ class AlarmClock {
 	}
 	
 	start() {
-	
+		
 		function checkClock(alarm) {
 			if(alarm.time === this.getCurrentFormattedTime()) alarm.callback();
 		}
 		let checkAlarm = checkClock.bind(this);
-		if(!this.timerId) this.timerId = setInterval(()=>this.alarmCollection.some(item => checkAlarm(item)), 1000)
+		if(!this.timerId) this.timerId = setInterval(() => this.alarmCollection.forEach(item => checkAlarm(item)), 1000)
 	}
 	
 	stop() {
